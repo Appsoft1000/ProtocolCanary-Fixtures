@@ -20,8 +20,7 @@ discussion and diff. New entries must include that link; see
   assertion kind for both new types plus a misspelled, lower-case and empty
   type name. Closes
   [issue #324](https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/324).
-  <!-- TODO: switch to the PR link once this PR is opened. -->
-  ([#324])
+  ([PR #381])
 - `tools/validate/validate.py` validates each Soroban `[[args]]` entry
   instead of only checking that `args` is an array: the closed `kind`/`value`
   key set, all 18 supported kinds, the value type and range per kind (the
@@ -34,8 +33,7 @@ discussion and diff. New entries must include that link; see
   wide-integer bounds, over-deep nesting, and the issue's four negative
   cases. Closes
   [issue #325](https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/325).
-  <!-- TODO: switch to the PR link once this PR is opened. -->
-  ([#325])
+  ([PR #381])
 - Repository scaffold: `schemas/`, `tools/validate/`, `tests/`, `docs/`,
   CI validation workflow.
   ([757e1e7], [5142110], [764111c], [806549c], [c8d8e75])
@@ -501,8 +499,9 @@ discussion and diff. New entries must include that link; see
 <!-- Link definitions: the pull request or commit that introduced each
      entry above. Commits listed here were pushed directly to `main`
      without a pull request; PR #97, PR #143, PR #176, PR #219, PR #231,
-     PR #232, PR #236, PR #252, PR #306, PR #308, PR #309, PR #313 and PR #315 are the
-     [Unreleased] entries that originated from pull requests. -->
+     PR #232, PR #236, PR #252, PR #306, PR #308, PR #309, PR #313, PR #315,
+     PR #380 and PR #381 are the [Unreleased] entries that originated from
+     pull requests. -->
 
 [757e1e7]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/commit/757e1e777489bb5c20e7500b245370de227c66b3
 [5142110]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/commit/51421106999811666502b2e7da7ae3b9e351fd9c
@@ -535,5 +534,4 @@ discussion and diff. New entries must include that link; see
 [#357]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/357
 [#354]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/354
 [PR #380]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/pull/380
-[#325]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/325
-[#324]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/324
+[PR #381]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/pull/381
