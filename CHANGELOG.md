@@ -12,6 +12,30 @@ discussion and diff. New entries must include that link; see
 
 ### Added
 
+- `tools/validate/validate.py` and `schemas/fixture-v1.schema.json` accept
+  the `TransactionEnvelope` and `LedgerEntry` XDR type names, matching the
+  five variants of `canary-xdr`'s `XdrTypeName` (read at Protocol-Canary
+  commit `9b3fefcacde3de03b3cb34bfea4d47124ebc4d82`). `schema_sync.py` compares
+  the validator's type set with the schema enum, and tests cover every XDR
+  assertion kind for both new types plus a misspelled, lower-case and empty
+  type name. Closes
+  [issue #324](https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/324).
+  <!-- TODO: switch to the PR link once this PR is opened. -->
+  ([#324])
+- `tools/validate/validate.py` validates each Soroban `[[args]]` entry
+  instead of only checking that `args` is an array: the closed `kind`/`value`
+  key set, all 18 supported kinds, the value type and range per kind (the
+  full u128/i128/u256/i256 bounds included), hex or canonical padded base64
+  for `bytes`, the 32-character `[A-Za-z0-9_]` symbol shape, a G.../C...
+  strkey shape for `address` (secret seeds rejected, checksums left to the
+  engine), and the eight-level `vec`/`map` nesting limit. The same structure
+  is mirrored in `schemas/fixture-v1.schema.json` and checked by
+  `schema_sync.py`; tests cover one valid and one invalid case per kind, the
+  wide-integer bounds, over-deep nesting, and the issue's four negative
+  cases. Closes
+  [issue #325](https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/325).
+  <!-- TODO: switch to the PR link once this PR is opened. -->
+  ([#325])
 - Repository scaffold: `schemas/`, `tools/validate/`, `tests/`, `docs/`,
   CI validation workflow.
   ([757e1e7], [5142110], [764111c], [806549c], [c8d8e75])
@@ -511,3 +535,5 @@ discussion and diff. New entries must include that link; see
 [#357]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/357
 [#354]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/354
 [PR #380]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/pull/380
+[#325]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/325
+[#324]: https://github.com/StellarCanary/ProtocolCanary-Fixtures/issues/324
